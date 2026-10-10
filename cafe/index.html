@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boba & Bites | Where Boba Meets Joy</title>
+  <meta name="description" content="Boba & Bites – fresh drinks, tasty bites and a cozy place to be." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Reusable SVG: original boba cup mascot -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="cup" viewBox="0 0 100 150">
+        <!-- straw -->
+        <rect x="52" y="2" width="7" height="40" rx="3" fill="#c8a27a" transform="rotate(8 55 20)"/>
+        <!-- lid -->
+        <rect x="14" y="30" width="72" height="12" rx="6" fill="#fff7ee" stroke="#6b3b22" stroke-width="3"/>
+        <!-- cup body -->
+        <path d="M18 42 H82 L74 140 Q73 146 67 146 H33 Q27 146 26 140 Z" fill="#fffaf3" stroke="#6b3b22" stroke-width="3" stroke-linejoin="round"/>
+        <!-- drink -->
+        <path d="M21 66 H79 L73 138 Q72.5 142 68 142 H32 Q27.5 142 27 138 Z" fill="var(--drink, #c68a5b)"/>
+        <!-- pearls -->
+        <g fill="#3a2217">
+          <circle cx="36" cy="132" r="5"/><circle cx="47" cy="134" r="5"/><circle cx="58" cy="132" r="5"/><circle cx="68" cy="134" r="4.5"/>
+          <circle cx="41" cy="122" r="5"/><circle cx="53" cy="123" r="5"/><circle cx="64" cy="122" r="4.5"/>
+        </g>
+        <!-- face -->
+        <circle cx="39" cy="82" r="4.5" fill="#3a2217"/><circle cx="61" cy="82" r="4.5" fill="#3a2217"/>
+        <circle cx="40.5" cy="80.5" r="1.4" fill="#fff"/><circle cx="62.5" cy="80.5" r="1.4" fill="#fff"/>
+        <path d="M44 91 Q50 98 56 91" fill="none" stroke="#3a2217" stroke-width="3" stroke-linecap="round"/>
+        <ellipse cx="31" cy="91" rx="4" ry="2.6" fill="#f4a29a" opacity=".7"/>
+        <ellipse cx="69" cy="91" rx="4" ry="2.6" fill="#f4a29a" opacity=".7"/>
+      </symbol>
+      <symbol id="heart" viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-9.6-9.2C.8 8.2 3 4.5 6.6 4.5c2 0 3.5 1 5.4 3 1.9-2 3.4-3 5.4-3 3.600 0 5.800 3.700 4.200 7.300C19.500 16.400 12 21 12 21z" fill="currentColor"/></symbol>
+    </defs>
+  </svg>
+
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <a href="#home" class="logo">
+      <span>Boba & Bites</span>
+      <svg class="logo-cup" style="--drink:#c68a5b"><use href="#cup"/></svg>
+    </a>
+    <nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li class="nav-cta-mobile"><button class="btn btn-primary" data-open-reserve>Reserve a Table</button></li>
+      </ul>
+    </nav>
+    <button class="btn btn-primary nav-cta" data-open-reserve>Reserve a Table</button>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <!-- Background video: fixed, full-screen, scrubbed by mouse/touch (see script.js) -->
+      <div class="hero-stage" id="heroStage" aria-hidden="true">
+        <video id="heroVideo" class="hero-video" src="video/hero-scrub.mp4" poster="video/hero-poster.jpg"
+               muted playsinline preload="auto" disablepictureinpicture tabindex="-1"></video>
+      </div>
+      <div class="hero-wash" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <h1>Where Boba Meets Joy</h1>
+        <p class="typewriter" aria-live="off"><span id="typeText">Fresh drinks. Tasty bites. A cozy place to be.</span><span class="caret" aria-hidden="true"></span></p>
+        <div class="hero-btns">
+          <button class="btn btn-primary" data-open-reserve>Reserve a Table</button>
+          <a href="#menu" class="btn btn-outline">View Full Menu</a>
+        </div>
+        <a href="#menu" class="scroll-down" aria-label="Scroll down">⌄</a>
+      </div>
+    </section>
+
+    <!-- CHEF'S RECOMMENDATIONS -->
+    <section class="section recs" id="menu">
+      <svg class="rec-mascot" style="--drink:#c68a5b"><use href="#cup"/></svg>
+      <div class="section-head reveal">
+        <h2 class="doodle">Chef's Recommendations</h2>
+        <p>Signature drinks crafted with passion and precision.</p>
+      </div>
+
+      <div class="cards-5">
+        <article class="drink-card reveal" style="--drink:#c68a5b">
+          <span class="badge">★ Signature</span>
+          <div class="drink-img"><img src="images/milk-tea.jpg" alt="Iced classic milk tea with tapioca pearls" width="640" height="640" loading="lazy" /></div>
+          <h3>Classic Milk Tea</h3>
+          <p>Rich, creamy, and full of flavor with premium tea leaves.</p>
+        </article>
+        <article class="drink-card reveal" style="--drink:#f4a0b5">
+          <span class="badge">★ Signature</span>
+          <div class="drink-img"><img src="images/strawberry.jpg" alt="Strawberry milkshake with whipped cream and fresh strawberries" width="640" height="640" loading="lazy" /></div>
+          <h3>Strawberry Bliss</h3>
+          <p>Fruity, refreshing, and irresistibly smooth.</p>
+        </article>
+        <article class="drink-card reveal" style="--drink:#6b4331">
+          <span class="badge">★ Signature</span>
+          <div class="drink-img"><img src="images/choco-cake.jpg" alt="Layered chocolate cake with melted chocolate pouring over it" width="640" height="640" loading="lazy" /></div>
+          <h3>Choco Dream</h3>
+          <p>Decadent chocolate with a hint of vanilla.</p>
+        </article>
+        <article class="drink-card reveal" style="--drink:#8fb069">
+          <span class="badge">★ Signature</span>
+          <div class="drink-img"><img src="images/matcha.jpg" alt="Iced matcha latte with a mint leaf" width="640" height="640" loading="lazy" /></div>
+          <h3>Matcha Latte</h3>
+          <p>Earthy, smooth, and naturally refreshing.</p>
+        </article>
+        <article class="drink-card reveal" style="--drink:#e6dccf">
+          <span class="badge">★ Signature</span>
+          <div class="drink-img"><img src="images/cookies-cream.jpg" alt="Cookies and cream ice cream with cookie pieces" width="640" height="640" loading="lazy" /></div>
+          <h3>Cookies & Cream</h3>
+          <p>A perfect blend of creamy milk and crushed cookies.</p>
+        </article>
+      </div>
+      <div class="center"><a href="#menu" class="btn btn-primary" id="exploreMenu">Explore Full Menu</a></div>
+    </section>
+
+    <!-- COZY SPACE -->
+    <section class="section cozy" id="gallery">
+      <div class="cozy-grid">
+        <div class="cozy-text reveal">
+          <h2>A Cozy Space for<br/>Great Moments <svg class="heart-ico"><use href="#heart"/></svg></h2>
+          <p>Step into our little café where every detail is crafted for your comfort. From the warm lighting to the cozy seating, we create the perfect vibe for you to relax, work, or hang out with your favorite people.</p>
+          <p>Whether it's a quick break or a long catch-up, Boba & Bites is your happy place.</p>
+          <div class="hero-btns left">
+            <button class="btn btn-primary" data-open-reserve>Book Your Experience</button>
+            <button class="btn btn-outline" id="tourBtn">Virtual Tour</button>
+          </div>
+        </div>
+        <div class="collage reveal">
+          <div class="shot big"><img src="images/cozy-cafe.jpg" alt="Cozy café interior with warm lights, plants and a window seat" loading="lazy" /></div>
+          <div class="shot s1"><img src="images/cozy-friends.jpg" alt="Friends laughing over coffee outside the café" loading="lazy" /></div>
+          <div class="shot s2"><img src="images/cozy-food-photos.jpg" alt="Friends photographing the food on the table" loading="lazy" /></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EVENTS -->
+    <section class="section events">
+      <div class="section-head reveal">
+        <h2 class="doodle">Special Events & Promotions</h2>
+        <p>Join us for exclusive offers and exciting events throughout the week.</p>
+      </div>
+      <div class="cards-4">
+        <article class="event-card reveal">
+          <div class="event-img e1"><img src="images/event-happy-hours.jpg" alt="Friends toasting with colourful drinks" loading="lazy" /></div>
+          <div class="event-body"><h3>Boba Happy Hours</h3><small>Mon – Thu | 3 PM – 6 PM</small><p>Get 20% off on all bubble teas.</p></div>
+        </article>
+        <article class="event-card reveal">
+          <div class="event-img e2"><img src="images/event-weekend.jpg" alt="Weekend café date with donuts, pasta, a breakfast bun and an iced coffee" loading="lazy" /></div>
+          <div class="event-body"><h3>Weekend Treats</h3><small>Fri – Sun | All Day</small><p>Special desserts & combo offers for a sweeter weekend.</p></div>
+        </article>
+        <article class="event-card reveal">
+          <div class="event-img e3"><img src="images/event-new-flavors.jpg" alt="Two seasonal iced coffees topped with foam on a wooden table" loading="lazy" /></div>
+          <div class="event-body"><h3>New Flavors</h3><small>Every Month</small><p>Try our limited-time seasonal specials.</p></div>
+        </article>
+        <article class="event-card reveal">
+          <div class="event-img e4"><img src="images/event-student.jpg" alt="Students studying with laptops at a long café table" loading="lazy" /></div>
+          <div class="event-body"><h3>Student Special</h3><small>Mon – Fri | 11 AM – 3 PM</small><p>Discounts for students with valid ID.</p></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section reviews">
+      <div class="section-head reveal">
+        <h2>What Our Customers Say</h2>
+        <div class="stars">★★★★★</div>
+        <p class="small">4.8 out of 5 based on 1,200+ reviews</p>
+      </div>
+      <div class="cards-3">
+        <blockquote class="review reveal">
+          <span class="quote">“</span>
+          <p>The bubble tea here is amazing! So fresh and full of flavour. The cozy ambience makes it even better.</p>
+          <footer><span class="avatar">🧑</span><div><strong>Rudranshu Wankhede</strong><small>Food Lover</small></div></footer>
+        </blockquote>
+        <blockquote class="review reveal">
+          <span class="quote">“</span>
+          <p>Great food, friendly staff and such a cute place. I love coming here with my friends!</p>
+          <footer><span class="avatar">👩</span><div><strong>Priya S.</strong><small>Regular Customer</small></div></footer>
+        </blockquote>
+        <blockquote class="review reveal">
+          <span class="quote">“</span>
+          <p>Best café in town! The drinks, snacks and vibe are just perfect. Highly recommended!</p>
+          <footer><span class="avatar">🧔</span><div><strong>Aman K.</strong><small>Food Enthusiast</small></div></footer>
+        </blockquote>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="contact">
+    <div class="footer-grid">
+      <div class="f-brand">
+        <div class="f-logo">
+          <svg style="--drink:#c68a5b"><use href="#cup"/></svg>
+          <div><strong>Boba & Bites</strong><small>Good Food • Good Mood</small></div>
+        </div>
+        <div class="socials">
+          <a href="#" aria-label="Instagram">◎</a>
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Twitter">t</a>
+        </div>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul class="f-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Opening Hours</h4>
+        <ul class="hours">
+          <li><span>Mon – Thu</span><span>11am – 10pm</span></li>
+          <li><span>Fri – Sat</span><span>11am – 12am</span></li>
+          <li><span>Sunday</span><span>Closed</span></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact Us</h4>
+        <ul class="f-links contact">
+          <li>📍 Cafe Lane, Heven, 000001</li>
+          <li>📞 <a href="tel:+918766449031">8766449031</a></li>
+          <li>✉️ <a href="mailto:rudranshuabc@gmail.com">rudranshuabc@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">
+      <span>© <span id="year">2026</span> Boba & Bites. All rights reserved.</span>
+      <span><a href="#">Privacy Policy</a> &nbsp; <a href="#">Terms of Service</a></span>
+    </div>
+  </footer>
+
+  <!-- RESERVATION MODAL -->
+  <div class="modal" id="reserveModal" aria-hidden="true">
+    <div class="modal-box" role="dialog" aria-labelledby="reserveTitle">
+      <button class="modal-close" id="closeModal" aria-label="Close">×</button>
+      <h3 id="reserveTitle">Reserve a Table</h3>
+      <form id="reserveForm" novalidate>
+        <label>Name<input type="text" name="name" required placeholder="Your name" /></label>
+        <label>Phone<input type="tel" name="phone" required placeholder="+91 98765 43210" /></label>
+        <div class="row">
+          <label>Date<input type="date" name="date" id="dateInput" required /></label>
+          <label>Time<input type="time" name="time" required value="17:00" /></label>
+        </div>
+        <label>Guests
+          <select name="guests">
+            <option>1</option><option selected>2</option><option>3</option><option>4</option>
+            <option>5</option><option>6</option><option>7+</option>
+          </select>
+        </label>
+        <p class="form-msg" id="formMsg"></p>
+        <button type="submit" class="btn btn-primary full">Confirm Reservation</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
